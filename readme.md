@@ -1,6 +1,6 @@
 # SecuTrace
 
-SecuTrace is anincident tracking and analysis tool that visualizes security incidents, analyzes logs, helps detect anomalies, and generates real-time alerts.
+SecuTrace is an incident tracking and analysis tool that visualizes security incidents, analyzes logs, helps detect anomalies, and generates real-time alerts.
 
 ## Features
 - **Incident Timeline Visualization**
