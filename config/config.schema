@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "log_file_path": {
+      "type": "string"
+    },
+    "alert_email": {
+      "type": "string",
+      "format": "email"
+    },
+    "smtp_server": {
+      "type": "string"
+    },
+    "smtp_port": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 65535
+    },
+    "smtp_user": {
+      "type": "string"
+    },
+    "smtp_password": {
+      "type": "string"
+    },
+    "detection_threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "time_frame": {
+      "type": "string",
+      "enum": ["1d", "1w", "1m"]
+    },
+    "max_log_size_mb": {
+      "type": "integer",
+      "minimum": 1
+    }
+{
+    "log_file_path": {"type": "string", "required": true},
+    "output_dir": {"type": "string", "required": true}
+}
+  },
+  "required": [
+    "log_file_path",
+    "alert_email",
+    "smtp_server",
+    "smtp_port",
+    "smtp_user",
+    "smtp_password",
+    "detection_threshold",
+    "time_frame",
+    "max_log_size_mb"
+  ]
+}

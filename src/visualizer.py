@@ -1,13 +1,17 @@
-# src/visualizer.py
 import matplotlib.pyplot as plt
 
-def visualize_timeline(events):
-    """Visualize incident timeline."""
-    timestamps = [event['timestamp'] for event in events]
-    event_types = [event['type'] for event in events]
-
-    plt.plot(timestamps, event_types)
+def plot_anomalies(logs):
+    """
+    Plots anomalies in the logs.
+    """
+    timestamps = [log['timestamp'] for log in logs]
+    anomalies = [log['anomaly'] == 'Anomaly' for log in logs]
+    
+    plt.figure(figsize=(10, 6))
+    plt.scatter(timestamps, anomalies, color='red' if anomalies else 'blue', label="Anomalies")
     plt.xlabel('Timestamp')
-    plt.ylabel('Event Type')
-    plt.title('Incident Timeline')
+    plt.ylabel('Anomaly Detected')
+    plt.title('Log Anomalies Detection')
+    plt.xticks(rotation=45)
+    plt.legend()
     plt.show()
